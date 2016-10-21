@@ -30,4 +30,13 @@
             android:inputType="number"/>
 
     </android.support.design.widget.TextInputLayout>
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:id="@+id/signDay"
+        android:paddingBottom="@dimen/fab_margin"
+        android:paddingTop="@dimen/fab_margin"
+        android:paddingRight="@dimen/fab_margin"
+        android:hint="@string/sign_day"/>
 </LinearLayout>
