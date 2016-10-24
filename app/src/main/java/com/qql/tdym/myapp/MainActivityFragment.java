@@ -28,6 +28,7 @@ public class MainActivityFragment extends Fragment {
 
     private View rootView;
     private MaterialCalendarView calendarView;
+
     public MainActivityFragment() {
     }
 
@@ -42,20 +43,20 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_main, container, false);
         calendarView = (MaterialCalendarView) rootView.findViewById(R.id.calendarView);
-        calendarView.setDateSelected(new Date(System.currentTimeMillis()),true);
+        calendarView.setDateSelected(new Date(System.currentTimeMillis()), true);
         calendarView.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
-                Snackbar.make(widget,date.getYear()+"年"+date.getMonth()+"月"+date.getDay()+"日",Snackbar.LENGTH_LONG).show();
+                Snackbar.make(widget, date.getYear() + "年" + date.getMonth() + "月" + date.getDay() + "日", Snackbar.LENGTH_LONG).show();
             }
         });
         return rootView;
     }
 
     @Subscribe(threadMode = ThreadMode.MainThread)
-    public void onEventMainThread(EventReturnToday event){
-        if(event != null && calendarView != null){
-            calendarView.setDateSelected(CalendarDay.today(),true);
+    public void onEventMainThread(EventReturnToday event) {
+        if (event != null && calendarView != null) {
+            calendarView.setDateSelected(CalendarDay.today(), true);
         }
     }
 
