@@ -44,16 +44,16 @@ public class SettingDialog {
             signDay.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(mDatePickDialog==null){
+                    if (mDatePickDialog == null) {
                         mDatePickDialog = new DatePickDialog(mContext) {
                             @Override
                             public void pickDate(CalendarDay date) {
-                                if(date!=null){
+                                if (date != null) {
                                     signDay.setText(date.toString());
                                 }
                             }
                         };
-                    }else{
+                    } else {
                         mDatePickDialog.reset();
                     }
                     mDatePickDialog.show();
